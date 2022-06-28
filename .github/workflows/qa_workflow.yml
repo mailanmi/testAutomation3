@@ -4,18 +4,12 @@ on: push
 #env:
 #  CUCUMBER_PUBLISH_TOKEN:
 #
-#jobs:
-#  build:
-#    name: Run test framework
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses:
-#      - name: Run tests
-#        run:
-#      - name: Publish Test Report
-#        if:
-#        uses:
-#      - uses:
-#        with:
-#          access-token:
-#          path:
+jobs:
+  build:
+    name: Run test framework
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: |
+          java --version
