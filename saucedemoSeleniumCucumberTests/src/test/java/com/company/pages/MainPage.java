@@ -55,6 +55,11 @@ public class MainPage {
     }
 
     public String getErrorText() {
+
         return errorText.getText();
+    }
+
+    public boolean browserIsOnThePage() {
+        return this.driver.getCurrentUrl().equals(this.mainPageUrl);
     }
 }

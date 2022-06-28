@@ -31,4 +31,29 @@ public class MainPageSteps {
     public void theUserShouldLoginSuccessfullyAndIsOnTheInventoryPage() {
         assertTrue(inventoryPage.browserIsOnThePage());
     }
+
+    @Then("The error should appear")
+    public void theUserShouldLoginUnsuccessfully() {
+        assertTrue(mainPage.getErrorText().equals("Epic sadface: Username and password do not match any user in this service"));
+    }
+
+    @And("User logouts")
+    public void theUserLogouts() {
+        inventoryPage.goToMenu();
+        inventoryPage.logout();
+    }
+
+    @Then("User is back on the home page")
+    public void UserIsBack() {
+        assertTrue(mainPage.browserIsOnThePage());
+    }
+
+    @Then("Menu bar contains '4' options")
+    public void FourOptions(){
+        inventoryPage.goToMenu();
+        inventoryPage.fourOptions();
+
+    }
+
+
 }
